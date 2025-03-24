@@ -1,0 +1,15 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/Homepages";
+import TaskForm from "./pages/TaskForm";
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/tasks/new" element={<TaskForm />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
