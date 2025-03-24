@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 function TaskForm() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const params = useParams();
+  console.log(params);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,7 +54,7 @@ function TaskForm() {
         ></textarea>
 
         <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">
-          Guardar
+          {params.id ? "Actualizar" : "Crear"}
         </button>
       </form>
     </div>
